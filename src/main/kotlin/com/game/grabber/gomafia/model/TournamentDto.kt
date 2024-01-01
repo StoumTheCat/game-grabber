@@ -31,4 +31,5 @@ data class TournamentDto(
     @JsonProperty("city_translate"                  ) var cityTranslate                 : String? = null,
     @JsonProperty("contribution_currency_translate" ) var contributionCurrencyTranslate : String? = null,
     @JsonProperty("elo_average"                     ) var eloAverage : String? = null,
+    @JsonProperty("total_rows"                     ) var totalRows : String? = null,
 )

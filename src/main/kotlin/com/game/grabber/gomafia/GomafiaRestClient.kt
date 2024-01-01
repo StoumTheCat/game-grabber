@@ -46,6 +46,20 @@ class GomafiaRestClient {
         return getDataList(resp!!).map { club -> mapper.convertValue(club, ClubDto::class.java)}
     }
 
+    fun getTournaments(): List<TournamentDto> {
+        val resp = RestClient.builder().baseUrl("https://gomafia.pro/api").build()
+                .post()
+                .uri("/tournament/getAll")
+                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+                .body("time=finished&fsm=yes&type=all&limit=10000&offset=0")
+                .retrieve()
+                .body(String::class.java)
+
+        val data = getDataList(resp!!)
+
+        return data.map { mapper.convertValue(it, TournamentDto::class.java) }
+    }
+
     fun getTournament(id: Int): TournamentResponse {
         val resp = RestClient.builder().baseUrl("https://gomafia.pro/api").build()
                 .post()
