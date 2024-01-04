@@ -34,6 +34,9 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-core:2.16.1")
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
     implementation("com.fasterxml.jackson.core:jackson-databind:2.16.1")
+// https://mvnrepository.com/artifact/com.h2database/h2
+    implementation("com.h2database:h2:2.2.224")
+
 
 }
 
